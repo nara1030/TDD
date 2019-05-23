@@ -1,14 +1,14 @@
 package ex_03.main;
 
 public class Account {
+	private int balance;
 
 	public Account(int i) {
-		// TODO Auto-generated constructor stub
+		this.balance = i;
 	}
 
 	public int getBalance() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.balance;
 	}
 
 }
