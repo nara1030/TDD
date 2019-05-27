@@ -1,21 +1,11 @@
-package ex_04.test;
+package ex_05.test;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import ex_04.main.Account;
+import ex_05.main.Account;
 
-/*
- * 1. fail();
- * 2. fail("getBalance() => " + account.getBalance());
- *   - 테스트 케이스의 기본 사상 나타냄
- *   - 예상값과 실제값을 비교하는 조건을 만족하지 않으면 실패!
- * 3. 좀 더 간편한 표현(if문 대체)
- *   A. assertEquals(예상값, 실제값)
- *   B. assertEquals("설명", 예상값, 실제값)
- *     - 테스트 실패 메시지까지 정확하게 표현하고 싶은 경우
- */
 public class AccountTest {
 	@Test
 	public void testAccount() throws Exception {
@@ -33,5 +23,19 @@ public class AccountTest {
 
 		account = new Account(0);
 		assertEquals(0, account.getBalance());
+	}
+
+	@Test
+	public void testDeposit() throws Exception {
+		Account account = new Account(10000);
+		account.deposit(1000);
+		assertEquals(11000, account.getBalance());
+	}
+
+	@Test
+	public void testWithdraw() throws Exception {
+		Account account = new Account(10000);
+		account.withdraw(1000);
+		assertEquals(9000, account.getBalance());
 	}
 }
